@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | History</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+            display: flex;
+        }
+        
+        .sisi {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            height: 100vh;
+            width: 20vw;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .sudut {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        
+        select[name="user"] {
+            background-color: white;
+            width: 120px;
+            height: 30px;
+            border-radius: 18px;
+            border: 0px none;
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #2f7b14;
+            text-align: center;
+        }
+        
+        .konten {
+            width: 80vw;
+            height: 100vh;
+            right: 0px;
+            top: 0px;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        
+        .menu {
+            justify-content: center;
+            align-items: baseline;
+            height: 100vh;
+            width: 20vw;
+            margin-block: 30vh;
+        }
+        
+        input[name="menu"] {
+            width: 15vw;
+            height: 30px;
+            border: 0px none;
+            background-color: transparent;
+            color: #2f7b14;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-inline: auto;
+        }
+        
+        input[name="menu"]:hover {
+            font-weight: bold;
+        }
+        
+        input[name="menuu"] {
+            width: 15vw;
+            height: 30px;
+            border: 0px none;
+            background-color: transparent;
+            color: black;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            margin-inline: auto;
+        }
+        
+        h1 {
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #2f7b14;
+            letter-spacing: 7px;
+            margin-top: 10px;
+        }
+        
+        h2 {
+            font-size: 35px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        
+        .title {
+            position: fixed;
+            height: 15vh;
+            width: 80vw;
+            top: 30px;
+            right: 0px;
+            justify-content: center;
+            align-items: center;
+            padding-block: 2vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sisi">
+        <h1>MOVERI</h1>
+        <div class="menu">
+            <form action="monitor.html"><input type="submit" name="menu" id="monitor" value="monitor"></form>
+            <form action="control.html"><input type="submit" name="menu" id="control" value="control"></form>
+            <input type="submit" name="menuu" id="history" value="history">
+            <form action="support.html"><input type="submit" name="menu" id="support" value="support"></form>
+        </div>
+    </div>
+    <div class="konten">
+        <div class="sudut">
+            <select name="user" id="user" onchange="userr()">
+                    <option value=""disabled selected>Dafari</option>
+                    <option value="1">feature</option>
+                    <option value="2">contact us</option>
+                    <option value="3">switch account</option>
+                    <option value="4">logout</option>
+                </select>
+        </div>
+        <div class="title" id="title">
+            <h2>Historical IV Control</h2>
+        </div>
+    </div>
+
+    <script>
+        function userr() {
+            var us = document.getElementById('user').value;
+            if (us == '1') {
+                window.location.href = 'features.html';
+            }
+            if (us == '2') {
+                window.location.href = 'contactus.html';
+            }
+            if (us == '3') {
+                window.location.href = 'login.html';
+            }
+            if (us == '4') {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

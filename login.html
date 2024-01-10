@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Login</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+        
+        .kotak {
+            background-color: white;
+            width: 400px;
+            height: 450px;
+        }
+        
+        .isi-kotak {
+            justify-content: center;
+            padding-inline: 59px;
+            padding-block: 20px;
+            text-align: center;
+        }
+        
+        .icon {
+            width: 7vw;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin-inline: auto;
+        }
+        
+        input[name="username"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #d3d3d3;
+            width: 280px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 30px;
+        }
+        
+        input[name="password"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #d3d3d3;
+            width: 280px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 12px;
+        }
+        
+        input[name="login"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #2f7b14;
+            width: 284px;
+            height: 33px;
+            border-radius: 6px;
+            border: 0px none;
+            color: white;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 12px;
+            margin-bottom: 15px;
+        }
+        
+        input[name="login"]:hover {
+            background-color: white;
+            border: 2px solid #2f7b14;
+            color: #2f7b14;
+        }
+        
+        .sudut {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        
+        input[name="signup"] {
+            background-color: transparent;
+            color: #2f7b14;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            opacity: 50%;
+            border: 0px none;
+            margin-inline: 2px;
+            margin-top: 2px;
+        }
+        
+        input[name="loginn"] {
+            background-color: transparent;
+            color: #2f7b14;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 0px none;
+            margin-inline: 2px;
+            margin-top: 2px;
+        }
+        
+        input[name="signup"]:hover {
+            opacity: 100%;
+        }
+        
+        label {
+            color: red;
+            font-size: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: right;
+            display: none;
+            margin-block: 1px;
+        }
+        
+        h1 {
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+            display: none;
+            margin-inline: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <div class="sudut">
+            <form action="signup.html"><input type="submit" name="signup" id="signup" value="sign up"></form>
+            <input type="submit" name="loginn" id="loginn" value="login">
+        </div>
+        <div class="isi-kotak">
+            <img class="icon" alt="icon" src="logo hijau.png">
+            <input type="text" name="username" id="username" placeholder="username or email . ." oninput="user()">
+            <label name="label" id="l1">username not yet registered</label>
+            <input type="password" name="password" id="password" placeholder="password . ." minlength="8" maxlength="16" oninput="pass()">
+            <label name="label" id="l2">invalid password</label>
+            <input type="submit" name="login" id="login" value="login" onclick="login()">
+            <h1 id="h1">forgot your password? <a href="forgot.html">yes</a></h1>
+        </div>
+    </div>
+    <script>
+        function user() {
+            var us = document.getElementById('username').value;
+            var uss = ['dafari al fathri', 'dafarialfathri@gmail.com', 'jakartalovestory@gmail.com', 'jakarta love story'];
+            if (us !== '') {
+                if (uss.indexOf(us) !== -1) {
+                    document.getElementById('l1').style.display = 'none';
+                } else if (uss.indexOf(us) == -1) {
+                    document.getElementById('l1').style.display = 'block';
+                }
+            } else {
+                document.getElementById('l1').style.display = 'none';
+            }
+        }
+
+        function pass() {
+            var pw = document.getElementById('password').value;
+            var pww = ['smartfren15avl', '085157755043'];
+            if (pw !== '') {
+                if (pww.indexOf(pw) !== -1) {
+                    document.getElementById('l2').style.display = 'none';
+                } else if (pww.indexOf(pw) == -1) {
+                    document.getElementById('l2').style.display = 'block';
+                }
+            } else {
+                document.getElementById('l2').style.display = 'none';
+            }
+        }
+
+        function login() {
+            var us = document.getElementById('username').value;
+            var uss = ['dafari al fathri', 'dafarialfathri@gmail.com', 'jakartalovestory@gmail.com', 'jakarta love story'];
+            var pw = document.getElementById('password').value;
+            var pww = ['smartfren15avl', '085157755043'];
+            if ((uss.indexOf(us) !== -1) && (pww.indexOf(pw) !== -1)) {
+                window.location.href = 'home.html';
+            } else {
+                alert('please try again with correctly username & password')
+                document.getElementById('h1').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

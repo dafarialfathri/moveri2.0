@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: slideAnimation 2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="myBox"></div>
+    <button onclick="triggerAnimation()">Trigger Animation</button>
+
+    <script>
+        function triggerAnimation() {
+            var box = document.getElementById('myBox');
+
+            // Remove and re-add the class to restart the animation
+            box.classList.remove('animate');
+            void box.offsetWidth; // Trigger reflow to restart the animation
+            box.classList.add('animate');
+        }
+
+        // Example: Repeat the animation when a certain condition is met
+        function checkConditionAndRepeatAnimation() {
+            // Replace this condition with your specific condition
+            var condition = true;
+
+            if (condition) {
+                triggerAnimation();
+            }
+        }
+
+        // You can call checkConditionAndRepeatAnimation() based on your specific condition or event
+    </script>
+</body>
+
+</html>

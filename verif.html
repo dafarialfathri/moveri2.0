@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Verification</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .kotak {
+            height: 450px;
+            width: 400px;
+            background-color: white;
+        }
+        
+        .isi-kotak {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-block: 20px;
+            padding-inline: 6px;
+        }
+        
+        h1 {
+            color: #2f7b14;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .email {
+            width: 50px;
+            height: auto;
+            margin-top: 20px;
+            animation: lompat 1.5s ease infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes lompat {
+            0%,
+            50%,
+            100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-8px);
+            }
+            75% {
+                transform: translateY(-18px)
+            }
+        }
+        
+        .time {
+            color: black;
+            animation: none;
+        }
+        
+        @keyframes cd {
+            0%,
+            100% {
+                transform: scale(100%);
+            }
+            50% {
+                transform: scale(110%);
+            }
+        }
+        
+        h2 {
+            color: black;
+            font-size: 11px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            display: none;
+        }
+        
+        h3 {
+            color: black;
+            font-size: 11px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input[name="code"] {
+            background-color: #d3d3d3;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-inline: 5.7px;
+            margin-top: 20px;
+        }
+        
+        input[name="submit"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #2f7b14;
+            width: 284px;
+            height: 33px;
+            border-radius: 6px;
+            border: 0px none;
+            color: white;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 15px;
+            margin-bottom: 12px;
+        }
+        
+        input[name="submit"]:hover {
+            background-color: white;
+            border: 2px solid #2f7b14;
+            color: #2f7b14;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <div class="isi-kotak">
+            <h1>Code Verification was sent to your email <br> please check your inbox, and entry here</h1>
+            <img class="email" id="email" src="email.png" alt="email">
+            <div class="time" id="time"><span id="timer"></span></div>
+            <h2 id="h2">not yet receive the code? <a href="verif.html">resend</a></h2>
+            <input type="text" name="code" id="1" maxlength="1" oninput="auto(this)">
+            <input type="text" name="code" id="2" maxlength="1" oninput="auto(this)">
+            <input type="text" name="code" id="3" maxlength="1" oninput="auto(this)">
+            <input type="text" name="code" id="4" maxlength="1" oninput="auto(this)">
+            <input type="text" name="code" id="5" maxlength="1" oninput="auto(this)">
+            <input type="text" name="code" id="6" maxlength="1" oninput="auto(this)">
+            <input type="submit" name="submit" id="submit" value="submit" onclick="submitt()">
+            <h3 id="h3">try with other email? <a href="forgot.html">yes</a></h3>
+        </div>
+    </div>
+    <script>
+        function cd() {
+            var cddate = new Date().getTime() + 92000;
+            var x = setInterval(function() {
+                var kini = new Date().getTime();
+                var jarak = cddate - kini;
+                var min = Math.floor(jarak / 60000);
+                var sec = Math.floor((jarak % 60000) / 1000);
+                document.getElementById('timer').innerHTML = '0' + min + ':' + sec;
+                if (jarak < 70000 && jarak > 60000) {
+                    document.getElementById('timer').innerHTML = '0' + min + ':0' + sec;
+                }
+                if (jarak < 60000) {
+                    document.getElementById('timer').innerHTML = '00:' + sec;
+                }
+                if (jarak < 11000) {
+                    document.getElementById('timer').style.color = '#ff0000';
+                    document.getElementById('timer').style.animation = 'cd 1s ease infinite';
+                }
+                if (jarak < 10000) {
+                    document.getElementById('timer').innerHTML = '00:0' + sec;
+                }
+                if (jarak < 0) {
+                    document.getElementById('timer').innerHTML = '00:00';
+                    document.getElementById('timer').style.display = 'none';
+                    document.getElementById('h2').style.display = 'block';
+                }
+            }, 1000);
+        }
+        cd()
+
+        function auto(currentInput) {
+            var batas = parseInt(currentInput.getAttribute('maxlength'));
+            var sebelah = currentInput.value;
+            if (sebelah.length >= batas) {
+                var lanjut = currentInput.nextElementSibling;
+                if (lanjut !== null && lanjut.tagName === "INPUT") {
+                    lanjut.focus();
+                }
+            }
+        }
+
+        function submitt() {
+            var c1 = document.getElementById('1').value;
+            var c2 = document.getElementById('2').value;
+            var c3 = document.getElementById('3').value;
+            var c4 = document.getElementById('4').value;
+            var c5 = document.getElementById('5').value;
+            var c6 = document.getElementById('6').value;
+            if (c1 !== '' && c2 !== '' && c3 !== '' && c4 !== '' && c5 !== '' && c6 !== '') {
+                window.location.href = 'repass.html';
+            } else {
+                alert('try again, please do correct verification');
+            }
+        }
+    </script>
+</body>
+
+</html>

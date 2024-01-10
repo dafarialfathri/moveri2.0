@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Recreate Password</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        
+        .kotak {
+            background-color: white;
+            width: 400px;
+            height: 450px;
+        }
+        
+        .isi-kotak {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-inline: 52px;
+            padding-block: 20px;
+        }
+        
+        input[name="submit"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #2f7b14;
+            width: 284px;
+            height: 33px;
+            border-radius: 6px;
+            border: 0px none;
+            color: white;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 15px;
+            margin-bottom: 12px;
+        }
+        
+        input[name="submit"]:hover {
+            background-color: white;
+            border: 2px solid #2f7b14;
+            color: #2f7b14;
+        }
+        
+        input[name="pass"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #d3d3d3;
+            width: 280px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 20px;
+        }
+        
+        input[name="repass"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #d3d3d3;
+            width: 280px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 14px;
+        }
+        
+        label {
+            color: red;
+            font-size: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: right;
+            display: none;
+            margin-block: 1px;
+            margin-right: 6px;
+        }
+        
+        h1 {
+            color: #2f7b14;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .key {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <div class="isi-kotak">
+            <img class="key" alt="key" src="key.png">
+            <h1>One step to final verification, <br> please create your new password</h1>
+            <input type="password" name="pass" id="pass" placeholder="new password . ." minlength="8" maxlength="16" oninput="passw()" required>
+            <label id="l1">your password are very short</label>
+            <input type="password" name="repass" id="repass" placeholder="confirm new password . ." maxlength="16" oninput="repassw()" disabled>
+            <label id="l2">incorrect confirm password</label>
+            <input type="submit" name="submit" id="submit" value="submit" onclick="submitt()">
+        </div>
+    </div>
+    <script>
+        function passw() {
+            var pass = document.getElementById('pass');
+            var repass = document.getElementById('repass');
+            var min = pass.getAttribute('minlength');
+            if (pass !== '') {
+                if (pass.value.length < min) {
+                    document.getElementById('l1').style.display = 'block';
+                }
+                if (pass.value.length >= min) {
+                    document.getElementById('l1').style.display = 'none';
+                    repass.removeAttribute('disabled');
+                }
+            } else {
+                document.getElementById('l1').style.display = 'none';
+            }
+        }
+
+        function repassw() {
+            var pass = document.getElementById('pass').value;
+            var repass = document.getElementById('repass').value;
+            if (repass !== '') {
+                if (repass == pass) {
+                    document.getElementById('l2').style.display = 'none';
+                }
+                if (repass !== pass) {
+                    document.getElementById('l2').style.display = 'block';
+                }
+            } else {
+                document.getElementById('l2').style.display = 'none';
+            }
+        }
+
+        function submitt() {
+            var pass = document.getElementById('pass').value;
+            var repass = document.getElementById('repass').value;
+            if (repass == pass) {
+                window.location.href = 'home.html';
+                alert('WELCOME TO MOVERI');
+            } else {
+                alert('try again, please correctly to create new password');
+            }
+        }
+    </script>
+</body>
+
+</html>

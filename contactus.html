@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Contact Us</title>
+    <style>
+        .pagee {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            transform: translateX(0);
+        }
+        
+        .page1 {
+            background-color: #2f7b14;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0vh;
+            left: 0vw;
+        }
+        
+        .page2 {
+            background-color: #2f7b14;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0vh;
+            left: 100vw;
+        }
+        
+        .page3 {
+            background-color: #2f7b14;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0vh;
+            left: 200vw;
+        }
+        
+        input[name="page"] {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background-color: transparent;
+            border: 1px solid white;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin-inline: 6px;
+            opacity: 70%;
+        }
+        
+        input[name="page"]:hover {
+            opacity: 100%;
+        }
+        
+        .opsi {
+            background-color: transparent;
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 0vw;
+            height: 20vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            padding-block: 5px;
+            z-index: 2;
+            flex-direction: column;
+        }
+        
+        h1 {
+            font-size: 35px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            letter-spacing: 2px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .tombol {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        h2 {
+            color: white;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h3 {
+            color: white;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        p {
+            color: white;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: justify;
+            padding-inline: 10vw;
+        }
+        
+        .teks {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 0vw;
+            width: 65vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            animation: muncul 1s ease;
+        }
+        
+        .foto {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 65vw;
+            width: 35vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            animation: muncul 2s ease;
+        }
+        
+        @keyframes muncul {
+            0% {
+                opacity: 0%;
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 100%;
+                transform: translateY(0%);
+            }
+        }
+        
+        .lingkaran {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .tekss {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 100vw;
+            width: 65vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        
+        .fotoo {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 165vw;
+            width: 35vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .teksss {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 200vw;
+            width: 65vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        
+        .fotooo {
+            display: flex;
+            position: fixed;
+            top: 0vh;
+            left: 265vw;
+            width: 35vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .photo {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="opsi">
+        <h1>Meet to Our Team</h1>
+        <div class="tombol">
+            <input type="button" name="page" id="p1" value="1" onclick="geser1()">
+            <input type="button" name="page" id="p2" value="2" onclick="geser2()">
+            <input type="button" name="page" id="p3" value="3" onclick="geser3()">
+        </div>
+    </div>
+    <div class="pagee" id="page">
+        <div class="page1" id="page1">
+            <div class="teks" id="teks">
+                <h2>Dafari Al Fathri</h2>
+                <h3>(+62)85157755043</h3>
+                <p>from my capability and hobbies about web development and programming, I concern on this project to responsibilites about web design interface which is the frontend part (HTML, css, and javascript).</p>
+            </div>
+            <div class="foto" id="foto">
+                <div class="lingkaran">
+                    <img class="photo" src="person 2.png" alt="photo">
+                </div>
+            </div>
+        </div>
+        <div class="page2" id="page2">
+            <div class="tekss" id="tekss">
+                <h2>Syanul Hidayatullah</h2>
+                <h3>(+62)81300002222</h3>
+                <p>with ability abd skill electrical practice from high school until college, I concern about censored system.</p>
+            </div>
+            <div class="fotoo" id="fotoo">
+                <div class="lingkaran">
+                    <img class="photo" src="person 1.png" alt="photo">
+                </div>
+            </div>
+        </div>
+        <div class="page3" id="page3">
+            <div class="teksss" id="teksss">
+                <h2>Muhammad Fauzan</h2>
+                <h3>(+62)81200003333</h3>
+                <p>Come from the hobby about design the SLD, I concern in this jobdesk about control system.</p>
+            </div>
+            <div class="fotooo" id="fotooo">
+                <div class="lingkaran">
+                    <img class="photo" src="person 3.png" alt="photo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function geser1() {
+            document.getElementById('page').style.transform = 'translateX(0vw)';
+            document.getElementById('teks').style.animation = 'muncul 2s ease';
+            document.getElementById('foto').style.animation = 'muncul 2s ease';
+            document.getElementById('tekss').style.animation = 'none';
+            document.getElementById('fotoo').style.animation = 'none';
+            document.getElementById('teksss').style.animation = 'none';
+            document.getElementById('fotooo').style.animation = 'none';
+        }
+
+        function geser2() {
+            document.getElementById('page').style.transform = 'translateX(-100vw)';
+            document.getElementById('teks').style.animation = 'none';
+            document.getElementById('foto').style.animation = 'none';
+            document.getElementById('tekss').style.animation = 'muncul 2s ease';
+            document.getElementById('fotoo').style.animation = 'muncul 2s ease';
+            document.getElementById('teksss').style.animation = 'none';
+            document.getElementById('fotooo').style.animation = 'none';
+        }
+
+        function geser3() {
+            document.getElementById('page').style.transform = 'translateX(-200vw)';
+            document.getElementById('teks').style.animation = 'none';
+            document.getElementById('foto').style.animation = 'none';
+            document.getElementById('tekss').style.animation = 'none';
+            document.getElementById('fotoo').style.animation = 'none';
+            document.getElementById('teksss').style.animation = 'muncul 2s ease';
+            document.getElementById('fotooo').style.animation = 'muncul 2s ease';
+        }
+    </script>
+</body>
+
+</html>

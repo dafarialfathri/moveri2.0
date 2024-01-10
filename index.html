@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Home</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+        }
+        
+        .corner {
+            display: flex;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        
+        input[name="login"] {
+            background-color: white;
+            width: 75px;
+            height: 30px;
+            border-radius: 18px;
+            border: 0px none;
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #2f7b14;
+        }
+        
+        input[name="login"]:hover {
+            background-color: #2f7b14;
+            border: 2px solid white;
+            color: white;
+            font-size: 15px;
+        }
+        
+        .sidebar {
+            background-color: transparent;
+            top: 0vh;
+            left: 10vw;
+            position: fixed;
+            display: flex;
+            height: 100vh;
+            width: 40vw;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        p {
+            color: white;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-inline: 4vw;
+            text-align: justify;
+        }
+        
+        .isi-sidebar {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-block: 38vh;
+        }
+        
+        .icon {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 40vw;
+            position: fixed;
+            top: 0vh;
+            right: 10vw;
+            display: flex;
+        }
+        
+        .logo {
+            width: 35vw;
+            height: auto;
+            display: flex;
+            animation: logo 5s ease infinite;
+        }
+        
+        @keyframes logo {
+            0%,
+            100% {
+                opacity: 10%;
+                transform: translateY(7vh);
+            }
+            50% {
+                opacity: 100%;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="isi-sidebar">
+            <h1> Monitor & Control Intravena Fluid System</h1>
+            <p>technology where apply in hospital or health clinic to help the nurse for monitoring & controling the IV fluid's patient. This platform was connected to the hardware where using censore for count the volume, speed drip, and then blood status.
+                This platform being the interface where user & hardware connected. User able to setting how much the speed drip can applying, and surely the need of patient.</p>
+        </div>
+    </div>
+    <div class="icon">
+        <img class="logo" alt="icon" src="logo putih.png">
+        <div class="corner">
+            <form action="login.html"><input type="submit" name="login" id="login" value="login"></form>
+        </div>
+    </div>
+</body>
+
+</html>

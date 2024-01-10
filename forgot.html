@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Forgot Password</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+        
+        .kotak {
+            width: 400px;
+            height: 450px;
+            background-color: white;
+        }
+        
+        .isi-kotak {
+            justify-content: center;
+            padding-inline: 59px;
+            padding-block: 20px;
+        }
+        
+        h1 {
+            color: #2f7b14;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        input[name="email"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #d3d3d3;
+            width: 280px;
+            height: 30px;
+            border-radius: 6px;
+            border: 0px none;
+            color: black;
+            font-size: 14px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 20px;
+        }
+        
+        label {
+            color: red;
+            font-size: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: right;
+            display: none;
+            margin-block: 1px;
+        }
+        
+        input[name="send"] {
+            display: block;
+            margin-inline: auto;
+            background-color: #2f7b14;
+            width: 284px;
+            height: 33px;
+            border-radius: 6px;
+            border: 0px none;
+            color: white;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 15px;
+            margin-bottom: 12px;
+        }
+        
+        input[name="send"]:hover {
+            background-color: white;
+            border: 2px solid #2f7b14;
+            color: #2f7b14;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <div class="isi-kotak">
+            <h1>please entry with registered email adress</h1>
+            <input type="text" name="email" id="email" placeholder="email adress . ." oninput="emailadr()">
+            <label id="l1">this email not yet registered</label>
+            <input type="submit" name="send" id="send" onclick="sendd()">
+        </div>
+    </div>
+    <script>
+        function emailadr() {
+            var em = document.getElementById('email').value;
+            var emm = ['dafarialfathri@gmail.com'];
+            if (em !== '') {
+                if (emm.indexOf(em) !== -1) {
+                    document.getElementById('l1').style.display = 'none';
+                } else if (emm.indexOf(em) == -1) {
+                    document.getElementById('l1').style.display = 'block';
+                }
+            } else {
+                document.getElementById('l1').style.display = 'block';
+            }
+        }
+
+        function sendd() {
+            var em = document.getElementById('email').value;
+            var emm = ['dafarialfathri@gmail.com'];
+            if (emm.indexOf(em) !== -1) {
+                window.location.href = 'verif.html';
+            } else {
+                alert('please try again with registered email');
+            }
+        }
+    </script>
+</body>
+
+</html>

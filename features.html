@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Features</title>
+    <style>
+        body {
+            background-color: white;
+            height: 100vh;
+            width: 100vw;
+            justify-content: space-evenly;
+            align-items: center;
+            display: flex;
+        }
+        
+        .kotak {
+            width: 300px;
+            height: 350px;
+            background-color: #2f7b14;
+            animation: muncul 1.5s ease-out forwards;
+        }
+        
+        @keyframes muncul {
+            0% {
+                opacity: 0%;
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 100%;
+                transform: translateY(0%);
+            }
+        }
+        
+        .icon1 {
+            width: auto;
+            height: 90px;
+            margin-inline: auto;
+            animation: tap 1s ease infinite;
+        }
+        
+        @keyframes tap {
+            0% {
+                transform: scale(100%);
+            }
+            100% {
+                transform: scale(85%);
+            }
+        }
+        
+        .icon2 {
+            width: auto;
+            height: 90px;
+            margin-inline: auto;
+            animation: iot 2s ease infinite;
+        }
+        
+        @keyframes iot {
+            0%,
+            50%,
+            100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-4px);
+            }
+            75% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .icon3 {
+            width: auto;
+            height: 90px;
+            margin-inline: auto;
+            animation: time 5s ease infinite;
+        }
+        
+        @keyframes time {
+            0% {
+                transform: rotateZ(0);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+        
+        h1 {
+            color: white;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        
+        p {
+            color: white;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: justify;
+            padding-inline: 5px;
+        }
+        
+        .isi {
+            justify-content: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 340px;
+            padding-block: 30px;
+            padding-inline: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak">
+        <div class="isi">
+            <img class="icon1" src="tap.png" alt="tap">
+            <h1>user friendly</h1>
+            <p>this platform easy to use because user just tap, input, and click based on procedure</p>
+        </div>
+    </div>
+    <div class="kotak">
+        <div class="isi">
+            <img class="icon2" src="everywhere.png" alt="everywhere">
+            <h1>Internet of Think</h1>
+            <p>user can use this platform in every place during user device able connect to internet access and the hardware of MOVERI was actived</p>
+        </div>
+    </div>
+    <div class="kotak">
+        <div class="isi">
+            <img class="icon3" src="time.png" alt="time">
+            <h1>Real Time Data</h1>
+            <p>we could to know how the volume, speed of drip, and status IV fluid about blood, the device were sending in each second to the website, so that user can reach the realtime data</p>
+        </div>
+    </div>
+</body>
+
+</html>
