@@ -152,7 +152,7 @@
     <script>
         function user() {
             var us = document.getElementById('username').value;
-            var uss = ['dafari al fathri', 'dafarialfathri@gmail.com', 'jakartalovestory@gmail.com', 'jakarta love story'];
+            var uss = ['dafari al fathri', 'dafarialfathri@gmail.com', 'jakartalovestory@gmail.com', 'jakarta love story', 'useruser', 'adminadmin'];
             if (us !== '') {
                 if (uss.indexOf(us) !== -1) {
                     document.getElementById('l1').style.display = 'none';
@@ -166,7 +166,7 @@
 
         function pass() {
             var pw = document.getElementById('password').value;
-            var pww = ['smartfren15avl', '085157755043'];
+            var pww = ['smartfren15avl', '085157755043', 'useruser', 'adminadmin'];
             if (pw !== '') {
                 if (pww.indexOf(pw) !== -1) {
                     document.getElementById('l2').style.display = 'none';
@@ -180,9 +180,9 @@
 
         function login() {
             var us = document.getElementById('username').value;
-            var uss = ['dafari al fathri', 'dafarialfathri@gmail.com', 'jakartalovestory@gmail.com', 'jakarta love story'];
+            var uss = ['user', 'admin'];
             var pw = document.getElementById('password').value;
-            var pww = ['smartfren15avl', '085157755043'];
+            var pww = ['user', 'admin'];
             if ((uss.indexOf(us) !== -1) && (pww.indexOf(pw) !== -1)) {
                 window.location.href = 'home.html';
             } else {
